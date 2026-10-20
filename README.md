@@ -407,7 +407,6 @@ These are intended outcomes. Actual environmental, financial, and operational im
 
 Potential areas for further development include:
 
-- Reliable offline data capture and synchronization.
 - End-to-end collection status tracking.
 - Stronger handover and transaction verification.
 - Expanded multilingual support.
