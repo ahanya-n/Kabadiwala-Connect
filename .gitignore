@@ -1,0 +1,63 @@
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python environments, bytecode, and test/lint caches
+**/venv/
+**/.venv/
+**/*_venv/
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.tox/
+.coverage
+htmlcov/
+
+# JavaScript and frontend build outputs
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/.next/
+**/.vite/
+
+# Flutter, Android, and general build outputs
+**/.dart_tool/
+**/.gradle/
+**/build/
+**/coverage/
+
+# Local data, generated outputs, and logs
+**/uploads/
+**/runs/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.bson
+*.dump
+
+# Local keys and signing material
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+local.properties
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated repository snapshots
+/project_structure.txt
+/integration_context.txt

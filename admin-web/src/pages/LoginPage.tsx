@@ -1,0 +1,56 @@
+import { type FormEvent, useState } from 'react'
+import { Navigate } from 'react-router-dom'
+import { InlineErrorBanner } from '../components/StateViews'
+import { useAuth } from '../features/auth/AuthContext'
+
+export function LoginPage() {
+  const { status, login, errorMessage } = useAuth()
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+
+  if (status === 'authenticated') {
+    return <Navigate to="/" replace />
+  }
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault()
+    setSubmitting(true)
+    await login(username, password)
+    setSubmitting(false)
+  }
+
+  return (
+    <div className="centered-form">
+      <h1>Government Admin Login</h1>
+      <form onSubmit={handleSubmit}>
+        {errorMessage && <InlineErrorBanner message={errorMessage} />}
+        <label>
+          Username
+          <input
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            minLength={3}
+            autoComplete="username"
+          />
+        </label>
+        <label>
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            minLength={6}
+            autoComplete="current-password"
+          />
+        </label>
+        <button type="submit" disabled={submitting}>
+          {submitting ? 'Logging in…' : 'Log In'}
+        </button>
+      </form>
+      <p className="hint">Admin accounts are provisioned by the seed script — there is no self-registration.</p>
+    </div>
+  )
+}

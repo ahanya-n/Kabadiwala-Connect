@@ -1,0 +1,239 @@
+:root {
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-border: #dcdcd6;
+  --color-text: #1c1c1a;
+  --color-muted: #6b6b64;
+  --color-primary: #2e7d32;
+  --color-primary-dark: #1b5e20;
+  --color-warning: #b26a00;
+  --color-warning-bg: #fff3e0;
+  --color-success: #1b5e20;
+  --color-success-bg: #e8f5e9;
+  --color-danger: #b3261e;
+  --color-danger-bg: #fdecea;
+  --color-neutral-bg: #ececeb;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.app-header .brand {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.app-header nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.app-header nav a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.app-header nav a:hover {
+  text-decoration: underline;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.app-main {
+  flex: 1;
+  padding: 20px;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.centered-form {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+input,
+select {
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--color-primary);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.lot-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.checkbox-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.quick-links a {
+  padding: 10px 16px;
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.hint {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.state-view {
+  padding: 24px;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.state-view-error {
+  color: var(--color-danger);
+}
+
+.inline-error-banner {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto 8px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-badge-neutral {
+  background: var(--color-neutral-bg);
+  color: var(--color-muted);
+}
+
+.status-badge-warning {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.status-badge-success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.status-badge-danger {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+}
